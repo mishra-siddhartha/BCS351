@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Structure for each node
+
 struct Node {
     int data;
     int priority;
     struct Node* next;
 };
 
-// Function to create a new node
+
 struct Node* createNode(int data, int priority) {
     struct Node* newNode =
         (struct Node*)malloc(sizeof(struct Node));
@@ -20,12 +20,11 @@ struct Node* createNode(int data, int priority) {
     return newNode;
 }
 
-// Function to insert an element into the priority queue
+/
 void enqueue(struct Node** head, int data, int priority) {
     struct Node* newNode = createNode(data, priority);
 
-    // Insert at beginning if queue is empty
-    // or new node has higher priority
+
     if (*head == NULL || priority < (*head)->priority) {
         newNode->next = *head;
         *head = newNode;
@@ -43,7 +42,7 @@ void enqueue(struct Node** head, int data, int priority) {
     }
 }
 
-// Function to remove highest priority element
+
 int dequeue(struct Node** head) {
     if (*head == NULL) {
         printf("Priority queue is empty.\n");
@@ -60,12 +59,12 @@ int dequeue(struct Node** head) {
     return data;
 }
 
-// Function to check if queue is empty
+
 int isEmpty(struct Node* head) {
     return head == NULL;
 }
 
-// Function to display priority queue
+
 void display(struct Node* head) {
     if (head == NULL) {
         printf("Priority queue is empty.\n");
