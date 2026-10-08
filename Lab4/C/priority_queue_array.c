@@ -20,7 +20,7 @@ struct Node* createNode(int data, int priority) {
     return newNode;
 }
 
-/
+
 void enqueue(struct Node** head, int data, int priority) {
     struct Node* newNode = createNode(data, priority);
 
